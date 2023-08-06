@@ -12,7 +12,7 @@ from .. import loader, utils
 
 
 class UnicoMod(loader.Module):
-    """Random picture/video/gif from the @unico_cat"""
+    """тест from the @unico_cat"""
 
     strings = {
         "name": "unico",
