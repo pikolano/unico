@@ -56,7 +56,7 @@ class KomaruMod(loader.Module):
             [
                 message_in_channel
                 async for message_in_channel in self.client.iter_messages(
-                    "archi8993", limit=200, filter=search_type
+                    "unico_cat", limit=200, filter=search_type
                 )
             ]
         )
