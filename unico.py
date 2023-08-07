@@ -35,7 +35,7 @@ class KomaruMod(loader.Module):
     }
 
     @loader.command(ru_doc="- подобрать рандом картинку(пикчу)/видео/гиф")
-    async def archie(self, message: Message):
+    async def unico(self, message: Message):
         """- подбирает рандомную пикчу/гиф/видео с @unico_cat
         
         @thishitp0st"""
