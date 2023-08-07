@@ -1,4 +1,3 @@
-﻿
 from random import choice
 
 from telethon.tl.types import (
@@ -11,8 +10,8 @@ from telethon.tl.types import (
 from .. import loader, utils
 
 
-class UnicoMod(loader.Module):
-    """тест from the @unico_cat"""
+class KomaruMod(loader.Module):
+    """Рандомная пикча с @unico_cat"""
 
     strings = {
         "name": "unico",
@@ -23,10 +22,10 @@ class UnicoMod(loader.Module):
     }
 
     strings_ru = {
-        "choosing": "<emoji document_id=5328311576736833844>🔴</emoji> Подбираем {}...",
-        "gif": "ваш гиф",
-        "video": "ваше видео",
-        "photo": "вашу картинку(пикчу)",
+        "choosing": "<emoji document_id=5328311576736833844>🔴</emoji> Отправка {}...",
+        "gif": "GIF",
+        "video": "видео",
+        "photo": "фото",
     }
 
     SEARCH_TYPES = {
@@ -36,8 +35,10 @@ class UnicoMod(loader.Module):
     }
 
     @loader.command(ru_doc="- подобрать рандом картинку(пикчу)/видео/гиф")
-    async def unico(self, message: Message):
-        """- choose a random picture/gif/video"""
+    async def archie(self, message: Message):
+        """- подбирает рандомную пикчу/гиф/видео с @unico_cat
+        
+        @thishitp0st"""
         search_type = choice(
             [
                 InputMessagesFilterGif,
@@ -55,7 +56,7 @@ class UnicoMod(loader.Module):
             [
                 message_in_channel
                 async for message_in_channel in self.client.iter_messages(
-                    "unico_cat", limit=200, filter=search_type
+                    "archi8993", limit=200, filter=search_type
                 )
             ]
         )
@@ -69,6 +70,6 @@ class UnicoMod(loader.Module):
         return await utils.answer_file(
             msg,
             chosed_msg,
-            chosed_msg.text or "<b>Подобрал " + search_type_str + ".</b>",
+            chosed_msg.text or "<b>Подобрал для тебя " + search_type_str + "!</b>",
             reply_to=reply,
         )
